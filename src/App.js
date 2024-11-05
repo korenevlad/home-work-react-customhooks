@@ -81,21 +81,34 @@
 
 ////  Для Дополнительной задачи 1
 
-import { useWindowScroll } from './customHooks/useWindowScroll';
+// import { useWindowScroll } from './customHooks/useWindowScroll';
 
-function App() {
-  const [scroll, scrollTo] = useWindowScroll();
+// function App() {
+//   const [scroll, scrollTo] = useWindowScroll();
 
-  return (
-    <div>
-      <p>
-        Scroll position x: {scroll.x}, y: {scroll.y}
-      </p>
-      <button onClick={() => scrollTo({ x: 5000, y: 10000 })}>Scroll to top</button>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <p>
+//         Scroll position x: {scroll.x}, y: {scroll.y}
+//       </p>
+//       <button onClick={() => scrollTo({ x: 5000, y: 10000 })}>Scroll to top</button>
+//     </div>
+//   );
+// }
+
 
 ////  Для Дополнительной задачи 2
+
+import { useToggle } from './customHooks/useToggle';
+
+function App() {
+  const [value, toggle] = useToggle(['blue', 'orange', 'cyan', 'teal']);
+
+  return (
+    <button onClick={() => toggle()}>
+      {value}
+    </button>
+  );
+}
 
 export default App;
