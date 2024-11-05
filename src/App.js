@@ -66,16 +66,36 @@
 
 ////  Для Задачи 4
 
-import { useViewportSize } from './customHooks/useViewportSize';
+// import { useViewportSize } from './customHooks/useViewportSize';
+
+// function App() {
+//   const { height, width } = useViewportSize();
+
+//   return (
+//     <>
+//       Width: {width}, height: {height}
+//     </>
+//   );
+// }
+
+
+////  Для Дополнительной задачи 1
+
+import { useWindowScroll } from './customHooks/useWindowScroll';
 
 function App() {
-  const { height, width } = useViewportSize();
+  const [scroll, scrollTo] = useWindowScroll();
 
   return (
-    <>
-      Width: {width}, height: {height}
-    </>
+    <div>
+      <p>
+        Scroll position x: {scroll.x}, y: {scroll.y}
+      </p>
+      <button onClick={() => scrollTo({ x: 5000, y: 10000 })}>Scroll to top</button>
+    </div>
   );
 }
+
+////  Для Дополнительной задачи 2
 
 export default App;
