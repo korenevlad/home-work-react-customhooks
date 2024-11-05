@@ -49,15 +49,32 @@
 // }
 
 
-import { useHover } from './customHooks/useHover';
+////  Для Задачи 3
+
+// import { useHover } from './customHooks/useHover';
+
+// function App() {
+//   const { hovered, ref } = useHover();
+
+//   return (
+//     <div ref={ref}>
+//       {hovered ? 'На меня навели мышку' : 'Наведи мышкой на меня'}
+//     </div>
+//   );
+// }
+
+
+////  Для Задачи 4
+
+import { useViewportSize } from './customHooks/useViewportSize';
 
 function App() {
-  const { hovered, ref } = useHover();
+  const { height, width } = useViewportSize();
 
   return (
-    <div ref={ref}>
-      {hovered ? 'На меня навели мышку' : 'Наведи мышкой на меня'}
-    </div>
+    <>
+      Width: {width}, height: {height}
+    </>
   );
 }
 
