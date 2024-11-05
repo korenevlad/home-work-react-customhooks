@@ -99,16 +99,16 @@
 
 ////  Для Дополнительной задачи 2
 
-import { useToggle } from './customHooks/useToggle';
+// import { useToggle } from './customHooks/useToggle';
 
-function App() {
-  const [value, toggle] = useToggle(['blue', 'orange', 'cyan', 'teal']);
+// function App() {
+//   const [value, toggle] = useToggle(['blue', 'orange', 'cyan', 'teal']);
 
-  return (
-    <button onClick={() => toggle()}>
-      {value}
-    </button>
-  );
-}
+//   return (
+//     <button onClick={() => toggle()}>
+//       {value}
+//     </button>
+//   );
+// }
 
 export default App;

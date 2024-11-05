@@ -12,9 +12,18 @@ export function useFetch(url){
     const sendAsync = useCallback(async (paramUrl) => {
         fetch(paramUrl)
             .then(response => response.json())
-            .then(res => setAppState({isLoading: false, data: res, error: false}))
-            .catch(error => setAppState({isLoading: false, data: null, error: true}))
-
+            .then(res => setAppState(
+                prevState => ({
+                     ...prevState, 
+                     data: res,
+                     isLoading: false
+                })))
+            .catch(error => setAppState(
+                prevstate => ({
+                    ...prevstate,
+                    isLoading: false,
+                    error: true
+                })))
     }, []);
 
     const refetch = useCallback(({ params }) => {
@@ -24,7 +33,11 @@ export function useFetch(url){
     }, [])
 
     useEffect(() => {
-        setAppState({isLoading: true});
+        setAppState(
+            prevState => ({
+                ...prevState,
+                isLoading: true
+            }));
         sendAsync(url);
     }, [])
 
